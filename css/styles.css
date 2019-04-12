@@ -1,0 +1,48 @@
+html > * {
+  background-color: #000;
+}
+
+#weather{
+  position: fixed;
+  top: 15px;
+  right:15px;
+}
+
+#quote{
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+transform: translateX(-50%);
+}
+
+#piclocation{
+  position: fixed;
+  left:15px;
+  bottom: 15px;
+  color: #fff;
+}
+
+.clockface{
+  font-size:9rem;
+}
+
+.askname{
+  font-size:5rem;
+}
+
+.formname{
+  font-size:5rem;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid white;
+}
+
+.focustext{
+    font-size: 5rem;
+}
+
+#getfocus, #getname, #displayfocus{
+  color:white;
+}
+

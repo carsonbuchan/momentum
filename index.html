@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Momentum!</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">  
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+  <body>
+    <section class="hero is-fullheight" id="selector">
+      <div class="hero-body">
+        <div class="container">
+          <div id="weather" class="is-pulled-right has-text-white is-size-4">Toronto<br>-45C</div>      
+          <section class="section">
+          <div id="showtime" class="clockface has-text-white has-text-centered"></div>
+             <div id="timetext" class="is-size-1 has-text-white has-text-centered"></div>
+              <!--Name-->
+          <div id="clock" class="clockface has-text-white has-text-centered">
+            <form method="post">
+              <label class="askname has-text-centered">Hello, what's your name?</label>
+              <br><input autofocus type="text" id="getname" class="formname has-text-centered has-white-text">
+              <input type="submit" style="display:none"/>
+            </form>
+            </div>
+              <!--Focus-->
+                  <div id="focus" class="clockface has-text-white has-text-centered">
+            <form method="post">
+              <label class="focustext has-text-centered">What's your main focus today?</label>
+              <br><input autofocus type="text" id="getfocus" class="formname has-text-centered has-white-text">
+              <input type="submit" style="display:none"/>
+            </form>
+            </div>
+            <!-- Focus after imputing name -->
+            <div id="displayfocus" class="is-large has-text-white has-text-centered"></div>
+            <!-- Quote -->
+            <div id="quote" class="has-text-white is-size-6 has-text-centered"></div>
+            <div id="piclocation" class="has-text-white is-size-6"></div>        
+          </section>
+
+          </div>
+      </div>
+    </section>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
