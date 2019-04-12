@@ -159,22 +159,31 @@ setInterval(function(){
       }
     }, 1000);
 
-//Get background
-  function getRandomBackground(){
-    var app_id = 'fba66b053360b9beaf303f316ad8fa7d7dc5fa90d114ff42b89a9adca3538be2'
-    var url = 'https://api.unsplash.com/photos/random?client_id=' + app_id;    
-    $.ajax({
-    url: url,
-    dataType: 'json',
-    success: function(json) {
-    var src = json.urls.regular;
-    piccountry = json.user.location;
-    $('#piclocation').append("Photo location:<br>"+piccountry);  
-    $('#selector').css('background-image','url('+src+')').css('background-size','cover');
-      }
-    });
-  }
 
+
+//Get quote
+function getQuote(){
+  let data;
+  temp= "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
+  $.ajax({
+  type: 'GET',
+  url: ''+temp,
+  data: data,
+  async: false,
+  beforeSend: function (xhr) {
+    if (xhr && xhr.overrideMimeType) {
+      xhr.overrideMimeType('application/json;charset=utf-8');
+    }
+  },
+  dataType: 'json',
+  success: function (data) {
+    myquote = data[0].content;
+    author = data[0].title;
+  }
+});
+   $('#quote').empty().append(""+myquote+" -"+author);          
+} 
+    
 //Get Long+lat 
 function getLocation(){
   let data;
@@ -227,27 +236,20 @@ function getWeather(){
    $('#weather').empty().append(""+city+"<br><img src='http://openweathermap.org/img/w/"+wicon+".png'>"+wtemp+"&deg;C");          
 }  
 
-//Get quote
-function getQuote(){
-  let data;
-  temp= "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
-  $.ajax({
-  type: 'GET',
-  url: ''+temp,
-  data: data,
-  async: false,
-  beforeSend: function (xhr) {
-    if (xhr && xhr.overrideMimeType) {
-      xhr.overrideMimeType('application/json;charset=utf-8');
-    }
-  },
-  dataType: 'json',
-  success: function (data) {
-    myquote = data[0].content;
-    author = data[0].title;
-  }
-});
-   $('#quote').empty().append(""+myquote+" -"+author);          
-}    
+//Get background
+  function getRandomBackground(){
+    var app_id = 'fba66b053360b9beaf303f316ad8fa7d7dc5fa90d114ff42b89a9adca3538be2'
+    var url = 'https://api.unsplash.com/photos/random?client_id=' + app_id;    
+    $.ajax({
+    url: url,
+    dataType: 'json',
+    success: function(json) {
+    var src = json.urls.regular;
+    piccountry = json.user.location;
+    $('#piclocation').append("Photo location:<br>"+piccountry);  
+    $('#selector').css('background-image','url('+src+')').css('background-size','cover');
+      }
+    });
+  }   
 });
 
